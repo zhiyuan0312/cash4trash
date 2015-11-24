@@ -8,14 +8,33 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+$font1: Futura, 'Trebuchet MS', Arial, sans-serif;
+$font2: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 body {
     width: 100%;
     height: 100%;
+    font-family: $font1;
 }
 
 html {
     width: 100%;
     height: 100%;
+}
+
+.navbar-style	{
+	background: none;
+	border: none;
+
+	.navbar-brand {
+		color: white;
+    font-size: 24px;
+	}
+
+	.navbar-nav	li a {
+		color: white;
+		font-size: 18px;
+	}
 }
 
 @media(min-width:767px) {
@@ -35,30 +54,52 @@ html {
 The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
 of those sections to manage the look and feel of the site. */
 
+.jumbotron{
+  background: none;
+  color: white;
+  margin-top: 15%;
+
+  p {
+    font-family: $font2;
+  }
+
+  .btn-style {
+    background: none;
+    border: solid white 2px;
+    border-radius: 0px;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+  }
+}
+
 .intro-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(asset-path('bg1.jpg')) center center no-repeat;
+    background-size: cover; 
 }
 
 .about-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #eee;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(asset-path('bg2.jpg')) center center no-repeat;
+    background-size: cover; 
 }
 
 .services-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #fff;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(asset-path('bg3.jpg')) center center no-repeat;
+    background-size: cover; 
 }
 
 .contact-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #eee;
-}
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(asset-path('bg4.jpg')) center center no-repeat;
+    background-size: cover; }
