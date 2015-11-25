@@ -27,7 +27,7 @@
 </div>
 
 <!-- Navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top navbar-style">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -48,7 +48,7 @@
             <%= image_tag current_user.facebook_profile_picture, :class => 'avatar' %>
           </li>
           <li>
-          <%= link_to "#{current_user.full_name}", edit_user_registration_path, :class => 'navbar-link' %>
+          <%= link_to "#{current_user.full_name}", dashboard_path, :class => 'navbar-link' %>
           </li>
           <li>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
@@ -65,6 +65,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="nav-offsetter"></div>
 
 <%= yield %>
 

@@ -3,7 +3,7 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-style" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-landing" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -36,7 +36,7 @@
                           <%= image_tag current_user.facebook_profile_picture, :class => 'avatar' %>
                         </li>
                         <li>
-                        <%= link_to "#{current_user.full_name}", edit_user_registration_path, :class => 'navbar-link' %>
+                        <%= link_to "#{current_user.full_name}", dashboard_path, :class => 'navbar-link' %>
                         </li>
                         <li>
                         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
