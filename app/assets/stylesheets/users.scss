@@ -23,3 +23,19 @@ body	{
 		font-size: 18px;
 	}
 }
+
+.option	{
+	padding: 5px;
+	text-align: center;
+
+
+	.big-button {
+		background-color: white;
+		border: 1px solid gray;
+		height: 300px;
+
+		h2	{
+		margin-top: 125px;
+		}
+	}
+}
