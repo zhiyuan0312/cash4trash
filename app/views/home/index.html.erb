@@ -43,10 +43,10 @@
                         </li>
                       <% else %>
                         <li>
-                        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
+                        <%= link_to "Sign up", class: 'navbar-link', data: {toggle: "modal", target: "#signupModal"} %>
                         </li>
                         <li>
-                        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                        <%= link_to "Login", class: 'navbar-link', data: {toggle: "modal", target: "#loginModal"} %>
                         </li>
                       <% end %>
                 </ul>
@@ -130,4 +130,7 @@
             </div>
         </div>
     </section>
+    <%= render partial: "users/registrations/new" %>
+    <%= render partial: "users/sessions/new" %>
+
 </body>
