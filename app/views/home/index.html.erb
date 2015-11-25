@@ -4,7 +4,7 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-style" role="navigation">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -32,9 +32,9 @@
                         <a class="page-scroll" href="#contact">Rewards</a>
                     </li>
                     <% if user_signed_in? %>
-<!--                         <li>
-                          <%= image_tag current_user.facebook_profile_picture %>
-                        </li> -->
+                        <li>
+                          <%= image_tag current_user.facebook_profile_picture, :class => 'avatar' %>
+                        </li>
                         <li>
                         <%= link_to "#{current_user.full_name}", edit_user_registration_path, :class => 'navbar-link' %>
                         </li>

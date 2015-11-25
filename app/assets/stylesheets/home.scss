@@ -22,6 +22,12 @@ html {
     height: 100%;
 }
 
+.avatar{
+  border-radius: 25px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
 .navbar-style	{
 	background: none;
 	border: none;
@@ -50,6 +56,11 @@ html {
     }
 }
 
+@media(max-width:767px) {
+    .avatar {
+      display: none;
+    }
+}
 /* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
 The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children
 of those sections to manage the look and feel of the site. */
