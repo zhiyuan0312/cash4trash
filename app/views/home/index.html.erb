@@ -43,10 +43,10 @@
                         </li>
                       <% else %>
                         <li>
-                        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
+                          <a data-toggle="modal" href="#signupModal">Sign Up</a>
                         </li>
                         <li>
-                        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                          <a data-toggle="modal" href="#loginModal">Login</a>
                         </li>
                       <% end %>
                 </ul>
@@ -55,6 +55,11 @@
         </div>
         <!-- /.container -->
     </nav>
+
+    <!-- modals -->
+    <%= render partial: "users/registrations/new" %>
+    <%= render partial: "users/sessions/new" %>
+    <!-- end modals -->
 
     <!-- Intro Section -->
     <section id="intro" class="intro-section">
@@ -130,4 +135,6 @@
             </div>
         </div>
     </section>
+
+
 </body>
