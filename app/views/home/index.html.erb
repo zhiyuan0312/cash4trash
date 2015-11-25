@@ -43,10 +43,10 @@
                         </li>
                       <% else %>
                         <li>
-                        <%= link_to "Sign up", class: 'navbar-link', data: {toggle: "modal", target: "#signupModal"} %>
+                          <a data-toggle="modal" href="#signupModal">Sign Up</a>
                         </li>
                         <li>
-                        <%= link_to "Login", class: 'navbar-link', data: {toggle: "modal", target: "#loginModal"} %>
+                          <a data-toggle="modal" href="#loginModal">Login</a>
                         </li>
                       <% end %>
                 </ul>
@@ -55,6 +55,11 @@
         </div>
         <!-- /.container -->
     </nav>
+
+    <!-- modals -->
+    <%= render partial: "users/registrations/new" %>
+    <%= render partial: "users/sessions/new" %>
+    <!-- end modals -->
 
     <!-- Intro Section -->
     <section id="intro" class="intro-section">
@@ -130,7 +135,6 @@
             </div>
         </div>
     </section>
-    <%= render partial: "users/registrations/new" %>
-    <%= render partial: "users/sessions/new" %>
+
 
 </body>
