@@ -1,0 +1,2 @@
+module CollectorsRegistrationsControllerHelper
+end

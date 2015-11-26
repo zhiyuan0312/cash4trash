@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :collectors, controllers: {
+    registrations: 'collectors/registrations'
+  }
+  
   get 'user/:id', to: 'users#show'
 
   get 'dashboard', to: 'users#index'
