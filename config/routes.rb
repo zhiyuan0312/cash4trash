@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_for :collectors, controllers: {
+    registrations: 'collectors/registrations'
+  }
+
   get 'schedules/new'
 
   post 'schedules/create'
