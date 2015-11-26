@@ -4,14 +4,18 @@ class SchedulesController < ApplicationController
   end
 
   def create
+   
   	@schedule = Schedule.new(schedule_params)
-    @schedule.save
-    byebug
+    @schedule.confirmation_key = SecureRandom.hex(3)
+    if @schedule.save
     redirect_to '/'
+    else
+      flash[:alert] = 'Something is wrong'
+    end
   end
 
   private
   def schedule_params
-    params.require(:schedule).permit(:start_date, :end_date, :user_id, :amount)
+    params.require(:schedule).permit(:start_date, :end_date, :user_id, :amount, :confirmation_key)
   end
 end
