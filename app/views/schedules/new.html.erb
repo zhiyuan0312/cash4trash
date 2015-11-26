@@ -8,9 +8,11 @@
         <%= f.datetime_select :end_date %>
         <br>
         <%= f.label :amount %>
-        <%= f.text_field :amount %>
+        <%= f.collection_select :amount, Schedule::Amount, :to_s, :to_s %>
 
         <%= f.hidden_field :user_id, :value => current_user.id  %>
+
+        <%= f.hidden_field :confirmation_key, :value => @confirmation_key %>
 
         <%= f.submit "Submit" %>
         <% end %>
