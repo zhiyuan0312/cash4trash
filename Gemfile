@@ -35,6 +35,13 @@ gem 'omniauth'
 
 # Use Omniauth Facebook for Facebook authentication
 gem 'omniauth-facebook'
+
+# Use Figaro to solve mac env issues
+gem 'figaro'
+
+# Use bootstrap3 rails datetime_picker for scheduling
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17', '>= 4.17.37'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
