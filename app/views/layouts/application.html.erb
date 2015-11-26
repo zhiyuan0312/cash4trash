@@ -7,12 +7,12 @@
   
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+
 </head>
 <body>
 
-<div class="alerts">
+<!-- Alert box -->
+<div class="alerts col-md-8 col-centered">
   <% if notice %>
     <p class="alert alert-success alert-dismissible fade in navbar-buffer" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -27,6 +27,47 @@
   <% end %>
 </div>
 
+<!-- Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top navbar-style">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">CASH4TRASH</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav pull-right">
+        <% if user_signed_in? %>
+          <li>
+            <%= image_tag current_user.facebook_profile_picture, :class => 'avatar' %>
+          </li>
+          <li>
+          <%= link_to "#{current_user.full_name}", dashboard_path, :class => 'navbar-link' %>
+          </li>
+          <li>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+          </li>
+        <% else %>
+          <li>
+          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
+          </li>
+          <li>
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+          </li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="nav-offsetter"></div>
 
 <%= yield %>
 

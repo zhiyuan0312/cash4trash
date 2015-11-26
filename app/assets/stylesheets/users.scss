@@ -1,0 +1,83 @@
+// Place all the styles related to the user controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font1: 'Montserrat', sans-serif;
+$font2: 'Raleway', sans-serif;
+
+body	{
+	background: #E2EAED;
+}
+
+.navbar-style	{
+	background: #172021;
+	border: none;
+
+	.navbar-brand {
+		color: white;
+    font-size: 24px;
+	}
+
+	.navbar-nav	li a {
+		color: white;
+		font-size: 18px;
+	}
+}
+
+.points	{
+	text-align: right;
+}
+
+.option	{
+	padding: 5px;
+	text-align: center;
+
+
+	.big-button {
+		background-color: white;
+		border: 1px solid gray;
+		height: 300px;
+
+		h2	{
+		margin-top: 125px;
+		}
+	}
+}
+
+.stats {
+	
+	padding: 5px;
+
+	.stats-padding {
+		height: 450px;
+		padding:5px;
+		background: white;
+		border: 1px solid gray;
+
+		.stats-header {
+			margin-bottom: 20px;
+		}
+	}
+
+	.pic	{
+	width: 150px;
+	height: 150px;
+	background: #000000;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-bottom: 15px;
+
+		.type {
+		font-family: $font2;
+		font-size: 18px;
+		text-align: center;
+		color: white;
+		padding-top: 64px;
+		}
+	}
+}
+
+
+
+
+

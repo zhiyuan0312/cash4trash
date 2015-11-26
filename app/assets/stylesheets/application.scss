@@ -11,16 +11,19 @@
  * file per style scope.
  *
  *= require_self
+ *= require navbar
  *= require home
+ *= require users
  *= require bootstrap-social
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Raleway:200);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 
-.navbar-buffer{
-  margin-top: 110px;
+.navbar-buffer {
+	margin-top: 110px;
 }
 
 .alerts{
@@ -29,3 +32,4 @@
   left: 20px;
   right: 20px;
 }
+

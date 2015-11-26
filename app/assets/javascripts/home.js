@@ -1,3 +1,8 @@
+$(document).on('ready page:load', function(){
+  $("#signupModal").modal('hide')
+  $("#loginModal").modal('hide')
+});
+
 //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
@@ -19,8 +24,8 @@ $(function() {
 });
 
 //scrollify for section snapping scrolling feature
-$(function() { 
-  $.scrollify({ 
+$(function() {
+  $.scrollify({
     section : "section",
     sectionName : "section-name",
     easing: "easeOutExpo",
@@ -30,8 +35,8 @@ $(function() {
     before:function() {},
     after:function() {},
     afterResize:function() {}
-  }); 
-}); 
+  });
+});
 
 
 //scrollify min js here
