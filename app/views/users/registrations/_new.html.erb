@@ -1,6 +1,5 @@
 <div id="signupModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="signupModalLabel">
   <div class="modal-dialog">
-
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
@@ -11,30 +10,50 @@
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
-          <div class="field">
+          <div class="field form-group">
             <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true %>
+            <%= f.email_field :email, class: "form-control", autofocus: true %>
           </div>
 
-          <div class="field">
+          <div class="field form-group">
             <%= f.label :password %>
             <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-            <%= f.password_field :password, autocomplete: "off" %>
+            <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
           </div>
 
-          <div class="field">
+          <div class="field form-group">
             <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
           </div>
 
           <div class="actions">
-            <%= f.submit "Sign up" %>
+            <%= f.submit "Sign up", class: "form-control btn btn-info homepage-modal-btn" %>
           </div>
         <% end %>
+        <br/>
+        <%- if devise_mapping.omniauthable? %>
+          <%- resource.class.omniauth_providers.each do |provider| %>
+            <% if provider == :facebook %>
 
-        <%= render "users/shared/links" %>
+              <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn-block btn-social btn-lg btn-facebook" do %>
+                <i class="fa fa-facebook"></i>
+                <span>Sign In with Facebook</span>
+              <% end %>
+              <br />
+            <% else %>
+              <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+            <% end %>
+          <% end -%>
+        <% end -%>
+        <%- if controller_name != 'sessions' %>
+          <a data-toggle="modal" id="sign-in-link1" href="#">Have a account already? Sign in here!</a>
+          <br />
+        <% end -%>
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <a data-toggle="modal" id="renew-password-link2" href="#">Forgot your password?</a>
+        <% end -%>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

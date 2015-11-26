@@ -1,7 +1,4 @@
-$(document).on('ready page:load', function(){
-  $("#signupModal").modal('hide')
-  $("#loginModal").modal('hide')
-});
+
 
 //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {

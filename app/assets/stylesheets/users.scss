@@ -23,7 +23,23 @@ body	{
 		font-size: 18px;
 	}
 }
+.text-center{
+	text-align: center;
+}
 
+.modal-dialog{
+	.btn-social{
+		text-align: center;
+		padding-left: 16px;
+		.btn-lg{
+			padding-left: none;
+		}
+	}
+}
+
+a:hover, a:focus{
+	text-decoration: none;
+}
 .points	{
 	text-align: right;
 }
@@ -45,7 +61,7 @@ body	{
 }
 
 .stats {
-	
+
 	padding: 5px;
 
 	.stats-padding {
@@ -76,8 +92,3 @@ body	{
 		}
 	}
 }
-
-
-
-
-
