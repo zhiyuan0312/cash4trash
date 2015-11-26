@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require home
-//= require user
+//= require schedule
+//= require moment
+//= require bootstrap-datetimepicker

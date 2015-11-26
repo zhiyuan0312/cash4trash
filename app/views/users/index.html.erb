@@ -1,5 +1,86 @@
 <div class="container">
 
-<h1><%= @user.full_name %></h1>
+	<div class="row">
+		<div class="col-md-4">
+			<h1><%= @user.full_name %></h1>
+		</div>
+		<div class="col-md-8">
+			<h1 class="points">You currently have: 1000 Points</h1>
+		</div>
+	</div>
+
+	<div class="user-panel">
+		<%= link_to "Edit Account Information", edit_user_registration_path %>
+	</div>
+
+	<br>
+
+	<div class="row">
+		<div class="col-md-4 option">
+			<div class="big-button">
+				<h2>Schedule a Pickup</h2>	
+			</div>
+		</div>
+		<div class="col-md-4 option">
+			<div class="big-button">
+				<h2>View Achievements</h2>
+			</div>
+		</div>
+		<div class="col-md-4 option">
+			<div class="big-button">
+				<h2>Claim your rewards</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 stats">
+			<div class="stats-padding">
+				<div class="col-md-12 stats-header">
+				<h1>So far, you have saved:</h1>
+				</div>
+				<div class="col-md-4">
+					<div class="pic">
+						<p class="type">Newspaper</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="pic">			
+						<p class="type">Magazine</p>
+					</div>				
+				</div>
+				<div class="col-md-4">
+					<div class="pic">
+						<p class="type">Cardboard</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="pic">
+						<p class="type">Plastic</p>
+					</div>			
+				</div>
+				<div class="col-md-4">
+					<div class="pic">					
+						<p class="type">Tin/Metal</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="pic">
+						<p class="type">Aluminium</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 stats">
+			<div class="stats-padding">
+				<div class="col-md-12">
+					<h1>That's equivalent to:</h1>
+				</div>
+				<div class="col-md-12">
+
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>

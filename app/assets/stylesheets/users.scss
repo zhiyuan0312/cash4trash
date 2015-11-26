@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$font1: Futura, 'Trebuchet MS', Arial, sans-serif;
-$font2: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font1: 'Montserrat', sans-serif;
+$font2: 'Raleway', sans-serif;
 
 body	{
 	background: #E2EAED;
@@ -23,7 +23,6 @@ body	{
 		font-size: 18px;
 	}
 }
-
 .text-center{
 	text-align: center;
 }
@@ -36,9 +35,60 @@ body	{
 			padding-left: none;
 		}
 	}
-
 }
 
 a:hover, a:focus{
 	text-decoration: none;
+}
+.points	{
+	text-align: right;
+}
+
+.option	{
+	padding: 5px;
+	text-align: center;
+
+
+	.big-button {
+		background-color: white;
+		border: 1px solid gray;
+		height: 300px;
+
+		h2	{
+		margin-top: 125px;
+		}
+	}
+}
+
+.stats {
+
+	padding: 5px;
+
+	.stats-padding {
+		height: 450px;
+		padding:5px;
+		background: white;
+		border: 1px solid gray;
+
+		.stats-header {
+			margin-bottom: 20px;
+		}
+	}
+
+	.pic	{
+	width: 150px;
+	height: 150px;
+	background: #000000;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-bottom: 15px;
+
+		.type {
+		font-family: $font2;
+		font-size: 18px;
+		text-align: center;
+		color: white;
+		padding-top: 64px;
+		}
+	}
 }
