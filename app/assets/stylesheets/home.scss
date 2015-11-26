@@ -15,11 +15,35 @@ body {
     width: 100%;
     height: 100%;
     font-family: $font1;
+
 }
 
 html {
     width: 100%;
     height: 100%;
+}
+.modal-open{
+  margin-right: 0px;
+}
+.nounderline{
+  text-decoration: none
+}
+.navbar-buffer {
+	margin-top: 110px;
+}
+
+.alerts{
+  position: absolute;
+  z-index: 1;
+  top: -20px;
+  left: 20px;
+  right: 20px;
+}
+
+.homepage-modal-btn{
+  padding-top: 11px;
+  padding-bottom: 33px;
+  font-size: 18px;
 }
 
 .col-centered{
@@ -84,8 +108,7 @@ of those sections to manage the look and feel of the site. */
 }
 
 .intro-section {
-    height: 100%;
-    padding-top: 150px;
+    height: vh;
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(asset-path('bg1.jpg')) center center no-repeat;
     background-size: cover;
@@ -93,7 +116,6 @@ of those sections to manage the look and feel of the site. */
 
 .about-section {
     height: 100%;
-    padding-top: 150px;
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(asset-path('bg2.jpg')) center center no-repeat;
     background-size: cover;
@@ -101,7 +123,6 @@ of those sections to manage the look and feel of the site. */
 
 .services-section {
     height: 100%;
-    padding-top: 150px;
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(asset-path('bg3.jpg')) center center no-repeat;
     background-size: cover;
@@ -109,7 +130,6 @@ of those sections to manage the look and feel of the site. */
 
 .contact-section {
     height: 100%;
-    padding-top: 150px;
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(asset-path('bg4.jpg')) center center no-repeat;
     background-size: cover; }
