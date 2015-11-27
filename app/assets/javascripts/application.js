@@ -20,8 +20,5 @@
 //= require home
 //= require users
 //= require schedule
+//= require morphext
 //= require turbolinks
-
-
-
-
