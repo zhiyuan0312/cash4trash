@@ -119,6 +119,9 @@ of those sections to manage the look and feel of the site. */
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(asset-path('bg2.jpg')) center center no-repeat;
     background-size: cover;
+    .recycle-steps {
+      color: white;
+    }
 }
 
 .services-section {
@@ -132,4 +135,8 @@ of those sections to manage the look and feel of the site. */
     height: 100%;
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(asset-path('bg4.jpg')) center center no-repeat;
-    background-size: cover; }
+    background-size: cover;
+    .recycle-rates {
+      font-size: 25px;
+      color: white;
+    } }
