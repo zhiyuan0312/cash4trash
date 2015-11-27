@@ -107,6 +107,16 @@ of those sections to manage the look and feel of the site. */
   }
 }
 
+@media(min-height:850px) {
+    .jumbotron {
+      margin-top: 30%;
+
+      p {
+        font-size: 24px;
+      }
+    }
+}
+
 .intro-section {
     height: vh;
     text-align: center;

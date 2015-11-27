@@ -2,83 +2,83 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-landing" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">CASH4TRASH</a>
-            </div>
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-fixed-top navbar-landing" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand page-scroll" href="#page-top">CASH4TRASH</a>
+			</div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav pull-right">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Why Recycle</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Rewards</a>
-                    </li>
-                      <% if user_signed_in? %>
-                        <li>
-                          <%= image_tag current_user.facebook_profile_picture, :class => 'avatar' %>
-                        </li>
-                        <li>
-                        <%= link_to "#{current_user.full_name}", dashboard_path, :class => 'navbar-link' %>
-                        </li>
-                        <li>
-                        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-                        </li>
-                      <% else %>
-                        <li>
-                          <a data-toggle="modal" href="#signupModal">Sign Up</a>
-                        </li>
-                        <li>
-                          <a data-toggle="modal" href="#loginModal">Login</a>
-                        </li>
-                      <% end %>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav pull-right">
+					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+					<li class="hidden">
+						<a class="page-scroll" href="#page-top"></a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#about">About</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#services">Why Recycle</a>
+					</li>
+					<li>
+						<a class="page-scroll" href="#contact">Rewards</a>
+					</li>
+					  <% if user_signed_in? %>
+						<li>
+						  <%= image_tag current_user.facebook_profile_picture, :class => 'avatar' %>
+						</li>
+						<li>
+						<%= link_to "#{current_user.full_name}", dashboard_path, :class => 'navbar-link' %>
+						</li>
+						<li>
+						<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+						</li>
+					  <% else %>
+						<li>
+						  <a data-toggle="modal" href="#signupModal">Sign Up</a>
+						</li>
+						<li>
+						  <a data-toggle="modal" href="#loginModal">Login</a>
+						</li>
+					  <% end %>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
 
-    <!-- modals -->
-    <%= render partial: "users/registrations/new" %>
-    <%= render partial: "users/sessions/new" %>
-    <!-- end modals -->
+	<!-- modals -->
+	<%= render partial: "users/registrations/new" %>
+	<%= render partial: "users/sessions/new" %>
+	<!-- end modals -->
 
-    <!-- Intro Section -->
-    <section id="intro" class="intro-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                  <div class="jumbotron">
-                    <h1>CASH 4 TRASH</h1>
-                    <br>
+	<!-- Intro Section -->
+	<section id="intro" class="intro-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+				  <div class="jumbotron">
+					<h1>CASH 4 TRASH</h1>
+					<br>
 
-                    <p>Making recycling convenient, fun and rewarding!</p>
+					<p>Making recycling convenient, fun and rewarding!</p>
 
-                    <br>
-                    <a class="btn btn-default page-scroll btn-style" href="#about">Find out how!</a>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </section>
+					<br>
+					<a class="btn btn-default page-scroll btn-style" href="#about">Find out how!</a>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</section>
 
     <!-- About Section -->
     <section id="about" class="about-section">
@@ -122,7 +122,6 @@
                   <div class="jumbotron">
                     <h1>We're about the future.</h1>
                     <br>
-                    <h3>Do you know?</h3>
                     <p><span id="js-rotating">There is no limit to the amount of times an aluminum can be recycled./Recycling plastic saves twice as much energy as burning it in an incinerator./Rainforests are being cut down at the rate of 100 acres per minute!/Recycling a single run of the Sunday New York Times would save 75,000 trees./To produce each week's Sunday newspapers, 500,000 trees must be cut down.</span></p>
                   </div>
                 </div>
@@ -174,6 +173,5 @@
             </div>
         </div>
     </section>
-
 
 </body>
