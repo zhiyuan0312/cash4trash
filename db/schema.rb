@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126073319) do
+ActiveRecord::Schema.define(version: 20151127094505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,13 +36,15 @@ ActiveRecord::Schema.define(version: 20151126073319) do
   add_index "collectors", ["reset_password_token"], name: "index_collectors_on_reset_password_token", unique: true, using: :btree
 
   create_table "schedules", force: :cascade do |t|
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.string   "amount"
     t.integer  "user_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "confirmation_key"
+    t.date     "date"
+    t.integer  "collector_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   add_index "schedules", ["user_id"], name: "index_schedules_on_user_id", using: :btree

@@ -11,12 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap-datepicker
+//= require jquery.timepicker
+//= require jquery.datepair
 //= require home
 //= require users
 //= require schedule
-//= require moment
-//= require bootstrap-datetimepicker
 //= require morphext
+//= require turbolinks
