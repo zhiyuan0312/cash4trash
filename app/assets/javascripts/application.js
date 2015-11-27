@@ -19,4 +19,4 @@
 //= require schedule
 //= require moment
 //= require bootstrap-datetimepicker
-
+//= require collectors_registrations_controller

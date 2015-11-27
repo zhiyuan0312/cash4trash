@@ -7,7 +7,7 @@
         <h4 class="modal-title">Sign Up</h4>
       </div>
       <div class="modal-body">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= form_for(user_resource, as: user_resource_name, url: registration_path(user_resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
           <div class="field form-group">
@@ -33,17 +33,17 @@
           </div>
         <% end %>
         <br/>
-        <%- if devise_mapping.omniauthable? %>
-          <%- resource.class.omniauth_providers.each do |provider| %>
+        <%- if user_devise_mapping.omniauthable? %>
+          <%- user_resource_class.omniauth_providers.each do |provider| %>
             <% if provider == :facebook %>
 
-              <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn-block btn-social btn-lg btn-facebook" do %>
+              <%= link_to omniauth_authorize_path(user_resource_name, provider), class: "btn-block btn-social btn-lg btn-facebook" do %>
                 <i class="fa fa-facebook"></i>
                 <span>Sign In with Facebook</span>
               <% end %>
               <br />
             <% else %>
-              <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+              <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(user_resource_name, provider) %><br />
             <% end %>
           <% end -%>
         <% end -%>
@@ -51,7 +51,7 @@
           <a data-toggle="modal" id="sign-in-link1" href="#">Have a account already? Sign in here!</a>
           <br />
         <% end -%>
-        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%- if user_devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
         <a data-toggle="modal" id="renew-password-link2" href="#">Forgot your password?</a>
         <% end -%>
       </div>
