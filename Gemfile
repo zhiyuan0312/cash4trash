@@ -39,9 +39,16 @@ gem 'omniauth-facebook'
 # Use Figaro to solve mac env issues
 gem 'figaro'
 
-# Use bootstrap3 rails datetime_picker for scheduling
-gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17', '>= 4.17.37'
+# Use bootstrap datepicker gem 
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+ 	:git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+
+# Using jquery-timepicker
+gem 'jquery-timepicker-rails'
+
+# Using gem to fix jquery with turbolinks
+gem 'jquery-turbolinks'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
