@@ -1,4 +1,3 @@
-
 $(document).on('ready page:load', function(){
   $('#renew-password-link1').click(function(){
     $('#loginModal').modal('hide');
@@ -29,3 +28,4 @@ $(document).on('ready page:load', function(){
 
   });
 });
+

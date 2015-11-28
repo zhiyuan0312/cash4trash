@@ -14,12 +14,15 @@
  *= require navbar
  *= require home
  *= require bootstrap-social
+ *= require jquery.timepicker
  *= require users
  *= require sessions
- *= require users_registration
- */
+ *= require schedules
+ *= require animate
+ *= require morphext
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-datepicker3";
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Raleway:200);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
