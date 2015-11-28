@@ -7,7 +7,7 @@
         <h4 class="modal-title">Sign Up</h4>
       </div>
       <div class="modal-body">
-        <%= form_for(user_resource, as: user_resource_name, url: registration_path(user_resource_name)) do |f| %>
+        <%= form_for(user_resource, as: user_resource_name, url: new_user_registration_path, method: :get) do |f| %>
           <%= devise_error_messages! %>
 
           <div class="field form-group">
@@ -29,7 +29,7 @@
           </div>
 
           <div class="actions">
-            <%= f.submit "Sign up", class: "form-control btn btn-info homepage-modal-btn" %>
+            <%= f.submit "Next", class: "form-control btn btn-info homepage-modal-btn" %>
           </div>
         <% end %>
         <br/>
@@ -43,7 +43,8 @@
               <% end %>
               <br />
             <% else %>
-              <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(user_resource_name, provider) %><br />
+              <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(user_resource_name, provider) %>
+              <br/>
             <% end %>
           <% end -%>
         <% end -%>
