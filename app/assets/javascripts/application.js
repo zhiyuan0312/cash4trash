@@ -21,4 +21,7 @@
 //= require users
 //= require schedule
 //= require morphext
+//= require moment
+//= require bootstrap-datetimepicker
+//= require collectors_registrations_controller
 //= require turbolinks
