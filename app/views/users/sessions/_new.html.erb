@@ -5,8 +5,8 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Log in</h4>
       </div>
-      <div class="modal-body">
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="modal-body padding-btm-40">
+        <%= form_for(user_resource, as: user_resource_name, url: session_path(user_resource_name)) do |f| %>
           <div class="field form-group">
             <%= f.label :Email_address %>
             <br/>
@@ -19,7 +19,7 @@
             <%= f.password_field :password, class: "form-control", placeholder: "Password", autocomplete: "off" %>
           </div>
 
-          <% if devise_mapping.rememberable? -%>
+          <% if user_devise_mapping.rememberable? -%>
             <div class="field form-group">
               <%= f.check_box :remember_me %>
               <%= f.label :remember_me %>
@@ -32,28 +32,29 @@
         <% end %>
 
         <br/>
-        <%- if devise_mapping.omniauthable? %>
-          <%- resource.class.omniauth_providers.each do |provider| %>
+        <%- if user_devise_mapping.omniauthable? %>
+          <%- user_resource_class.omniauth_providers.each do |provider| %>
             <% if provider == :facebook %>
 
-              <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn-block btn-social btn-lg btn-facebook" do %>
+              <%= link_to omniauth_authorize_path(user_resource_name, provider), class: "btn-block btn-social btn-lg btn-facebook" do %>
                 <i class="fa fa-facebook"></i>
                 <span>Sign In with Facebook</span>
               <% end %>
               <br />
             <% else %>
-              <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+              <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(user_resource_name, provider) %><br />
             <% end %>
           <% end -%>
         <% end -%>
-        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <%- if user_devise_mapping.registerable? && controller_name != 'registrations' %>
           <a data-toggle="modal" id="sign-up-link1" href="#">Don't have an account? No worries, sign up here!</a>
           <br />
         <% end -%>
 
-        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-          <a data-toggle="modal" id="renew-password-link1" href="#">Forgot your password?</a>
+        <%- if user_devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <a data-toggle="modal" id="renew-password-link1" class="float-left" href="#">Forgot your password?</a>
         <% end -%>
+        <a data-toggle="modal" id="collectors-login-link1" class="clear-both float-left" href="#">Are you a collector? Log in here!</a>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -61,6 +62,3 @@
     </div>
   </div>
 </div>
-<!-- modals -->
-<%= render partial: "users/passwords/new" %>
-<!-- end modals -->
