@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'collections/show'
+
+  get 'collections/new'
+
+  get 'collections/index'
+
+  post 'collections/create'
+
+  get 'rewards_redemption/index'
+
   devise_for :collectors, controllers: {
     registrations: 'collectors/registrations'
   }
@@ -15,6 +25,8 @@ Rails.application.routes.draw do
   get 'user/:id', to: 'users#show'
 
   get 'dashboard', to: 'users#index'
+
+  get 'collectors_dashboard', to: 'collectors#index'
 
     # devise_for :users, controllers: { omniauth_callbacks: "callbacks" }
 

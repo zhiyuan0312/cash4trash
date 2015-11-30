@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127094505) do
+ActiveRecord::Schema.define(version: 20151130075051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "collections", force: :cascade do |t|
+    t.integer  "newspaper"
+    t.integer  "magazine"
+    t.integer  "cardboard"
+    t.integer  "plastic"
+    t.integer  "tinmetal"
+    t.integer  "aluminium"
+    t.integer  "schedule_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "confirmation_key"
+  end
+
+  add_index "collections", ["schedule_id"], name: "index_collections_on_schedule_id", using: :btree
 
   create_table "collectors", force: :cascade do |t|
     t.string   "full_name"
@@ -34,6 +49,11 @@ ActiveRecord::Schema.define(version: 20151127094505) do
 
   add_index "collectors", ["email"], name: "index_collectors_on_email", unique: true, using: :btree
   add_index "collectors", ["reset_password_token"], name: "index_collectors_on_reset_password_token", unique: true, using: :btree
+
+  create_table "reward_redemptions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "schedules", force: :cascade do |t|
     t.string   "amount"
