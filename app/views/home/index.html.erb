@@ -41,6 +41,13 @@
 						<li>
 						<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
 						</li>
+            <% elsif collector_signed_in? %>
+              <li>
+              <%= link_to "#{current_collector.full_name}", collectors_dashboard_path, :class => 'navbar-link' %>
+              </li>
+              <li>
+              <%= link_to "Logout", destroy_collector_session_path, method: :delete, :class => 'navbar-link'  %>
+              </li>
 					  <% else %>
 						<li>
 						  <a data-toggle="modal" href="#signupModal">Sign Up</a>
