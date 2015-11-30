@@ -1,0 +1,52 @@
+<div class="container">
+
+	<h1>When would you like us to come around?</h1>
+
+	<div>
+
+		<div class="form-group" id="schedule-form">
+			<%= form_for @schedule, :method => "put", :url => {:controller => "schedules", :action => "update"} do |f| %>
+
+				<div>
+				<%= f.label :Date %>
+				<%= f.text_field :date, :data => {:provide => "datepicker"} %>
+
+				<%= f.label "I'm available from:" %>
+				<%= f.text_field :start_time, class: "time start", value: @schedule.start_time.in_time_zone("Kuala Lumpur").strftime('%I:%M %p')%> to
+				<%= f.text_field :end_time, class: "time end", value: @schedule.end_time.in_time_zone("Kuala Lumpur").strftime('%I:%M %p') %>
+
+				</div>
+
+				<div>
+					<h3>How much do you have for us?</h3>	
+					<div class="row">
+						<label class="col-md-4">
+						  <input type="radio" name="schedule[amount]" value="1" />
+							  <div class="select ">
+							  	<p>A box full</p>
+							  </div>
+						</label>
+						
+						<label class="col-md-4">
+						  <input type="radio" name="schedule[amount]" value="2" />
+							  <div class="select">
+							  	<p>A bin full</p>
+							  </div>
+						</label>
+
+						<label class="col-md-4">
+						  <input type="radio" name="schedule[amount]" value="3" />
+							  <div class="select">
+							  	<p>A truck load</p>
+							  </div>
+						</label>
+					</div>
+				</div>
+
+				<div>
+				<%= f.submit "Update"%>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -49,4 +49,52 @@
 			<% end %>
 		</div>
 	</div>
+
+
+	<div>
+
+		<h1>Here are your existing scheduled pickups.</h1>
+
+		<div class="table-responsive">
+  		<table class="table table-hover">
+				<thead>
+			    <tr>
+			      <th>Date</th>
+			      <th>Time</th>
+			      <th>Collector Name</th>
+			      <th>Confirmation Key</th>
+			      <th>Modify/Cancel</th>
+			    </tr>
+			  </thead>
+				  <tbody>
+				  <% if @existing_schedules == [] %>
+					  <p>You have never scheduled any pickups!</p>
+				  <% else %>
+				  	<% @existing_schedules.each do |s| %>
+					    <tr>
+					      <td>
+					     	  <%= s.date %>
+					      </td>
+
+					      <td>
+					      	<%= s.start_time.in_time_zone("Kuala Lumpur").strftime('%I:%M %p') %> to <%= s.end_time.in_time_zone("Kuala Lumpur").strftime('%I:%M %p')%>
+					      </td>
+
+					      <% if s.collector_id == nil %>
+					      	<td>We're assigning a collector right away!</td>
+					      <% else %>
+					      	<td><%= s.collector.full_name %></td>
+					      <% end %>
+
+					      <td>
+					     	  <%= s.confirmation_key %>
+					      </td>
+					      <td> <a href="/schedules/<%= s.id %>/edit"> Modify </a> / <%= link_to "Cancel", s, method: :delete %> </td>
+					    </tr>
+					  <% end %>
+					<% end %>
+			  </tbody>
+  		</table>
+		</div>
+	</div>
 </div>

@@ -4,9 +4,13 @@ Rails.application.routes.draw do
     registrations: 'collectors/registrations'
   }
 
-  get 'schedules/new'
+  resources :schedules, only: [:destroy, :edit, :update]
+
+  get 'schedules', to: 'schedules#new'
 
   post 'schedules/create'
+
+
 
   get 'user/:id', to: 'users#show'
 
