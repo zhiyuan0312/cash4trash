@@ -1,0 +1,41 @@
+<div class="container">	
+	<h1>New collections</h1>
+
+		<div class="form-group" id="collection-form">
+			<%= form_for @collection, :method => "post", :url => {:controller => "collections", :action => "create"} do |f| %>
+					<div>
+					<%= f.label :newspaper %>
+					<%= f.text_field :newspaper %>
+					<br>
+
+					<%= f.label :magazine %>
+					<%= f.text_field :magazine %>
+					<br>
+
+					<%= f.label :cardboard %>
+					<%= f.text_field :cardboard %>
+					<br>
+
+					<%= f.label :plastic %>
+					<%= f.text_field :plastic %>
+					<br>
+
+					<%= f.label :tin_metal %>
+					<%= f.text_field :tinmetal %>
+					<br>
+
+					<%= f.label :aluminium %>
+					<%= f.text_field :aluminium %>
+					<br>
+
+					<%= f.label :confirmation_key %>
+					<%= f.text_field :confirmation_key %>
+					</div>
+
+				<div>
+				<%= f.submit "Submit" %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
