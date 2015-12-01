@@ -68,14 +68,31 @@ a:hover, a:focus{
 
 
 	.big-button {
-		background-color: white;
-		border: 1px solid gray;
+		background-color: gray;
+		border: 2px solid white;
 		height: 300px;
+		color: white;
+
+		&:hover {
+			color: #90EDD5;
+		}
 
 		h2	{
 		margin-top: 125px;
 		}
 	}
+}
+
+.schedule-button {
+  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url(asset-path('schedule-button.jpg')) center center no-repeat;		
+}
+
+.achievements-button {
+  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url(asset-path('achievements-button.png')) center center no-repeat;		
+}
+
+.rewards-button {
+  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), url(asset-path('rewards-button.jpg')) center center no-repeat;		
 }
 
 .stats {
