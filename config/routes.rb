@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :collections, only: [:new]
+
   get 'collections/show'
 
-  get 'collections/new'
+  get 'collections/:id/new', to: 'collections#new'
 
   get 'collections/index'
 

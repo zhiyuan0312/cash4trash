@@ -5,5 +5,6 @@ class CollectorsController < ApplicationController
 
   def index
   	@collector = current_collector
+  	@existing_schedules = Schedule.where(:collector_id == nil)
   end
 end
