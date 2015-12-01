@@ -1,4 +1,4 @@
-<div class="container footer-push-fix">
+<div class="container">
 	<h1><%= current_collector.full_name %>'s dashboard</h1>
 
   <!-- hidden radios. first is checked -->
@@ -68,7 +68,11 @@
 							<%= size %>
 						</td>
 
-						<td> <a href="/collections/<%= s.id %>/new"> Pick this up </a>
+						<td>
+							<%= form_for :collection, method: "post", url: {controller: "collections", action: "create"} do |f| %>
+							<%= f.hidden_field :schedule_id, value: "#{s.id}" %>
+							<%= f.submit "Take this job" %>
+							<% end %>
 						</td>
 
 					</tr>
@@ -125,7 +129,11 @@
 							<%= size %>
 						</td>
 
-						<td> <a href="/collections/<%= s.id %>/new"> Pick this up </a>
+						<td> 
+							<%= form_for :collection, method: "get", url: {controller: "collections", action: "edit"} do |f| %>
+							<%= f.hidden_field :schedule_id, value: "#{s.id}" %>
+							<%= f.submit "Pick up now" %>
+							<% end %>
 						</td>
 
 					</tr>
@@ -183,7 +191,7 @@
 							<%= size %>
 						</td>
 
-						<td> <a href="/collections/<%= s.id %>/new"> Pick this up </a>
+						<td> Completed on <%= s.collection.updated_at.in_time_zone("Kuala Lumpur").strftime('%d/%b/%y %I:%M %p') %>
 						</td>
 
 					</tr>

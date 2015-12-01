@@ -63,7 +63,7 @@
 			      <th>Time</th>
 			      <th>Collector Name</th>
 			      <th>Confirmation Key</th>
-			      <th>Modify/Cancel</th>
+			      <th>Action</th>
 			    </tr>
 			  </thead>
 				  <tbody>
@@ -89,7 +89,15 @@
 					      <td>
 					     	  <%= s.confirmation_key %>
 					      </td>
-					      <td> <a href="/schedules/<%= s.id %>/edit"> Modify </a> / <%= link_to "Cancel", s, method: :delete %> </td>
+					      <td> 
+					      <% if s.collection == nil || s.collection.confirmation_key == nil %>
+					      	<a href="/schedules/<%= s.id %>/edit"> Modify </a> / <%= link_to "Cancel", s, method: :delete %>
+					      <% else %>
+					      	<p>Completed on <%= s.collection.updated_at.in_time_zone("Kuala Lumpur").strftime('%d/%b/%y %I:%M %p') %></p>
+			
+					      <% end %>
+					       
+					      </td>
 					    </tr>
 					  <% end %>
 					<% end %>

@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :collections, only: [:new]
 
   get 'collections/show'
 
-  get 'collections/:id/new', to: 'collections#new'
+  post 'collections/create', to: 'collections#create', as: 'new_collection'
 
-  get 'collections/index'
-
-  post 'collections/create'
+  get 'collections/pickup', to: 'collections#edit'
+  post 'collections/pickup', to: 'collections#update'
 
   get 'rewards_redemption/index'
 

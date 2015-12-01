@@ -1,7 +1,7 @@
 class SchedulesController < ApplicationController
   def new
   	@schedule = Schedule.new
-    @existing_schedules = current_user.schedules.reverse
+    @existing_schedules = current_user.schedules.order(date: :desc)
   end
 
   def create
