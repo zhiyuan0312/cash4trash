@@ -1,30 +1,41 @@
 <div class="container">
 	<h1><%= current_collector.full_name %>'s dashboard</h1>
-	<div class="row">
-		<label class="col-md-1">
-			<a href="/collections/new">New</a>
-		</label>
-		<label class="col-md-1">
-			<a href="/collections/picked_up">Booked</a>
-		</label>
-		<label class="col-md-1">
-			<a href="/collections/completed">Completed</a>
-		</label>
-	</div>
 
-	<div class="table-responsive">
-		<table class="table table-hover">
-			<thead>
-				<tr>
+  <!-- hidden radios. first is checked -->
+  <input accesskey='1' checked='true' id='radio-1' name='tables' type='radio'>
+  <!-- the rest are not checked -->
+  <input accesskey='2' id='radio-2' name='tables' type='radio'>
+  <input accesskey='3' id='radio-3' name='tables' type='radio'>
+  <!-- bootstrap button group for labels -->
+  <div class='btn-group'>
+    <label class='btn btn-default btn-sm' for='radio-1'>
+      New 
+    </label>
+    <label class='btn btn-default btn-sm' for='radio-2'>
+      Booked
+    </label>
+    <label class='btn btn-default btn-sm' for='radio-3'>
+      Completed
+    </label>
+  </div>
+
+	<!-- 5 tables with unique content -->
+  <div class='table-container' id='radio-1-table'>
+    <table class='table table-hover table-responsive'>
+      <caption class='text-left'>
+        <h3 class='page-header'>New jobs available</h3>
+      </caption>
+      <thead>
+        <tr>
 					<th>Date</th>
 					<th>Time</th>
 					<th>Customer Name</th>
 					<th>Location</th>
 					<th>Amount</th>
 					<th>Action</th>
-				</tr>
-			</thead>
-				<tbody>
+        </tr>
+      </thead>
+      <tbody>
 					<% @unpicked_schedules.each do |s| %>
 					<tr>
 						<td>
@@ -63,5 +74,122 @@
 					</tr>
 				<% end %>
 			</tbody>
-		</table>
-	</div>
+    </table>
+  </div>
+
+  <div class='table-container' id='radio-2-table'>
+    <table class='table table-hover table-responsive'>
+      <caption class='text-left'>
+        <h3 class='page-header'>Booked</h3>
+      </caption>
+      <thead>
+        <tr>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Customer Name</th>
+					<th>Location</th>
+					<th>Amount</th>
+					<th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+					<% @incomplete_jobs.each do |s| %>
+					<tr>
+						<td>
+							<%= s.date %>
+						</td>
+
+						<td>
+							<%= s.start_time.in_time_zone("Kuala Lumpur").strftime('%I:%M %p') %> to <%= s.end_time.in_time_zone("Kuala Lumpur").strftime('%I:%M %p')%>
+						</td>
+
+						<td>
+							<%= s.user.full_name %>
+						</td>
+
+						<td>
+							Petaling Jaya
+						</td>
+
+						<td>
+							<% size = "" %>
+							<% if s.amount == "1" %>
+							<% size = "small" %>
+								<% elsif s.amount == "2" %>
+							<% size = "medium" %>
+								<% elsif s.amount == "3" %>
+							<% size = "large" %>
+								<% else %>
+							<% size = "Not specified" %>
+							<% end %>
+							<%= size %>
+						</td>
+
+						<td> <a href="/collections/<%= s.id %>/new"> Pick this up </a>
+						</td>
+
+					</tr>
+				<% end %>
+			</tbody>
+    </table>
+  </div>
+
+  
+  <div class='table-container' id='radio-3-table'>
+    <table class='table table-hover table-responsive'>
+      <caption class='text-left'>
+        <h3 class='page-header'>Completed Jobs</h3>
+      </caption>
+      <thead>
+        <tr>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Customer Name</th>
+					<th>Location</th>
+					<th>Amount</th>
+					<th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+					<% @completed_jobs.each do |s| %>
+					<tr>
+						<td>
+							<%= s.date %>
+						</td>
+
+						<td>
+							<%= s.start_time.in_time_zone("Kuala Lumpur").strftime('%I:%M %p') %> to <%= s.end_time.in_time_zone("Kuala Lumpur").strftime('%I:%M %p')%>
+						</td>
+
+						<td>
+							<%= s.user.full_name %>
+						</td>
+
+						<td>
+							Petaling Jaya
+						</td>
+
+						<td>
+							<% size = "" %>
+							<% if s.amount == "1" %>
+							<% size = "small" %>
+								<% elsif s.amount == "2" %>
+							<% size = "medium" %>
+								<% elsif s.amount == "3" %>
+							<% size = "large" %>
+								<% else %>
+							<% size = "Not specified" %>
+							<% end %>
+							<%= size %>
+						</td>
+
+						<td> <a href="/collections/<%= s.id %>/new"> Pick this up </a>
+						</td>
+
+					</tr>
+				<% end %>
+			</tbody>
+    </table>
+  
+  </div>
+</div>
