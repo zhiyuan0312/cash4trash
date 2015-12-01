@@ -1,0 +1,61 @@
+.table-container {
+  opacity: 0;
+  position: absolute;
+	width: 940px;
+}
+
+/* vertical spacing for the button group */
+.btn-group {
+  margin: 24px 0px;
+}
+
+tr td,
+tr th {
+  text-align: center;
+}
+tr td:first-child,
+tr th:first-child {
+  text-align: left;
+}
+tr td:last-child,
+tr th:last-child {
+  text-align: right;
+}
+
+input[type="radio"] {
+  /* hiding all radios */
+  display: none;
+}
+input[type="radio"]#radio-1:checked ~ #radio-1-table {
+  /* showing the right table when radio is checked */
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+input[type="radio"]#radio-1:checked ~ .btn-group > label[for="radio-1"] {
+  /* styling current label */
+  color: #333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+input[type="radio"]#radio-2:checked ~ #radio-2-table {
+  /* showing the right table when radio is checked */
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+input[type="radio"]#radio-2:checked ~ .btn-group > label[for="radio-2"] {
+  /* styling current label */
+  color: #333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+input[type="radio"]#radio-3:checked ~ #radio-3-table {
+  /* showing the right table when radio is checked */
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+input[type="radio"]#radio-3:checked ~ .btn-group > label[for="radio-3"] {
+  /* styling current label */
+  color: #333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
