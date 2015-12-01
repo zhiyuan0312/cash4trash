@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
 
 <!-- Alert box -->
 <div class="alerts col-md-8 col-centered">
@@ -54,6 +54,14 @@
           <li>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
           </li>
+
+        <% elsif collector_signed_in? %>
+          <li>
+          <%= link_to "#{current_collector.full_name}", collectors_dashboard_path, :class => 'navbar-link' %>
+          </li>
+          <li>
+          <%= link_to "Logout", destroy_collector_session_path, method: :delete, :class => 'navbar-link' %>
+          </li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -66,18 +74,14 @@
 
 </body>
 
-<footer class="footer">
-<p class="font-50-px">
-  CASH4TRASH
-</p>
-<p class="font-50-px">
-  <a href="#"><i class="fa fa-facebook"></i></a>
-  <a class="light-blue"href="#"><i class="fa fa-twitter"></i></a>
-  <a class="red"href="#"><i class="fa fa-youtube"></i></a>
-</p>
-<p class="font-10px centered">
-  Created by: Wei Jun, Zhi Yuan, and Andy.
-</p>
+<div class="footer">
+  <div class="container">
+    <div class="footer-info">
+      <h3>Cash 4 Trash</h3>
+      <p>Chow Zhi Yuan | Chai Wei Jun | Andy Chong</p>
+    </div>
+  </div>
+</div>
 
-</footer>
+
 </html>

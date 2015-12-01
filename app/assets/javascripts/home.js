@@ -1,5 +1,7 @@
 $(document).on('page:change',function(){
-
+  if ($(".home-page").length === 0){
+    return
+  }
 //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
