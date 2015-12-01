@@ -1,4 +1,67 @@
 <div class="container">
 	<h1><%= current_collector.full_name %>'s dashboard</h1>
-	<p>collector is: <%= current_collector.full_name %></p>
-</div>
+	<div class="row">
+		<label class="col-md-1">
+			<a href="/collections/new">New</a>
+		</label>
+		<label class="col-md-1">
+			<a href="/collections/picked_up">Booked</a>
+		</label>
+		<label class="col-md-1">
+			<a href="/collections/completed">Completed</a>
+		</label>
+	</div>
+
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Time</th>
+					<th>Customer Name</th>
+					<th>Location</th>
+					<th>Amount</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+				<tbody>
+					<% @existing_schedules.each do |s| %>
+					<tr>
+						<td>
+							<%= s.date %>
+						</td>
+
+						<td>
+							<%= s.start_time.in_time_zone("Kuala Lumpur").strftime('%I:%M %p') %> to <%= s.end_time.in_time_zone("Kuala Lumpur").strftime('%I:%M %p')%>
+						</td>
+
+						<td>
+							<%= s.user.full_name %>
+						</td>
+
+						<td>
+							Petaling Jaya
+						</td>
+
+						<td>
+							<% size = "" %>
+							<% if s.amount == "1" %>
+							<% size = "small" %>
+								<% elsif s.amount == "2" %>
+							<% size = "medium" %>
+								<% elsif s.amount == "3" %>
+							<% size = "large" %>
+								<% else %>
+							<% size = "Not specified" %>
+							<% end %>
+							<%= size %>
+						</td>
+
+						<td> <a href="/collections/<%= s.id %>/new"> Pick this up </a>
+						</td>
+
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>

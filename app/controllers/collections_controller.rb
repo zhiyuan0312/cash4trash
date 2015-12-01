@@ -4,6 +4,7 @@ class CollectionsController < ApplicationController
 
   def new
   	@collection = Collection.new
+    @schedule = Schedule.find(params[:id])
   end
 
   def index
@@ -11,9 +12,10 @@ class CollectionsController < ApplicationController
 
   def create
   	@collection = Collection.new(collection_params)
-  	byebug
   	if @collection.schedule.confirmation_key == params[:collection][:confirmation_key]
   		@collection.save
+      @collection.schedule.collector_id = current_collector.id
+      byebug
   		redirect_to '/collectors_dashboard'
   		flash[:notice] = 'Collection succesful'
   	else
@@ -24,6 +26,6 @@ class CollectionsController < ApplicationController
 
   private
   def collection_params
-  	params.require(:collection).permit(:newspaper, :magazine, :cardboard, :plastic, :tinmetal, :aluminium, :confirmation_key)
+  	params.require(:collection).permit(:newspaper, :magazine, :cardboard, :plastic, :tinmetal, :aluminium, :confirmation_key, :schedule_id)
   end
 end
