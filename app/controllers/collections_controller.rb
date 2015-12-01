@@ -1,27 +1,37 @@
 class CollectionsController < ApplicationController
-  def show
-  end
-
-  def new
-  	@collection = Collection.new
-    @schedule = Schedule.find(params[:id])
-  end
-
-  def index
-  end
 
   def create
-  	@collection = Collection.new(collection_params)
+  	@collection = Collection.new
+    @collection.schedule_id = params[:collection][:schedule_id]
+    @collection.save
+    @collection.schedule.collector_id = current_collector.id
+    @collection.schedule.save
+    flash[:notice] = "Booked the job!"
+    redirect_to collectors_dashboard_path
+  end
+
+
+  def edit
+    if params[:collection][:schedule_id] == nil
+      redirect_to collectors_dashboard_path
+    else
+    @schedule = Schedule.find(params[:collection][:schedule_id])
+    @collection = @schedule.collection
+    end
+  end
+
+  def update
+    @schedule = Schedule.find(params[:collection][:schedule_id])
+  	@collection = @schedule.collection
+
+    @collection.assign_attributes(collection_params)
   	if @collection.schedule.confirmation_key == params[:collection][:confirmation_key]
   		@collection.save
-      @collection.schedule.collector_id = current_collector.id
-      @collection.schedule.save
-      byebug
   		redirect_to '/collectors_dashboard'
-  		flash[:notice] = 'Collection succesful'
+  		flash[:notice] = 'Collection succesful!'
   	else
-  		flash[:alert] = 'Someting went wrong'
-  		render '/collections/new'
+  		flash[:alert] = 'Incorrect confirmation key'
+  		render '/collections/edit'
   	end
   end
 
