@@ -17,6 +17,7 @@
 //= require bootstrap-datepicker
 //= require jquery.timepicker
 //= require jquery.datepair
+//= require jquery.drawDoughnutChart
 //= require home
 //= require users
 //= require schedule
