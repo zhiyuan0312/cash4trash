@@ -6,7 +6,7 @@ $font1: 'Montserrat', sans-serif;
 $font2: 'Raleway', sans-serif;
 
 body	{
-	background: #E2EAED;
+  background: linear-gradient(rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 0.8)), url(asset-path('background.jpg')) center center no-repeat;	
 }
 
 .text-center{
@@ -28,7 +28,7 @@ a:hover, a:focus{
 }
 
 .navbar-style	{
-	background: #172021;
+	background: #334D5C;
 	border: none;
 
 	.navbar-brand {
@@ -98,15 +98,33 @@ a:hover, a:focus{
 .stats {
 
 	padding: 5px;
+	color: white;
+
+	.stats-one {
+
+		background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(asset-path('stats.jpg')) center center no-repeat;	
+	}
+
+	.stats-two {
+
+		background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(asset-path('stats2.jpg')) center center no-repeat;	
+	}	
 
 	.stats-padding {
 		height: 450px;
 		padding:5px;
-		background: white;
-		border: 1px solid gray;
+		border: 2px solid white;
 
 		.stats-header {
 			margin-bottom: 20px;
+		}
+
+		#stat-info {
+			margin-top: 100px;
+			font-family: $font2;
+			font-size: 36px;
+			text-align: center;
+
 		}
 	}
 
@@ -173,6 +191,7 @@ a:hover, a:focus{
   cursor: default;
 }
 .doughnutSummaryTitle {
+	color: white;
   position: absolute;
   top: 50%;
   width: 100%;
@@ -181,6 +200,7 @@ a:hover, a:focus{
   letter-spacing: .06em;
 }
 .doughnutSummaryNumber {
+	color: white;
   position: absolute;
   top: 50%;
   width: 100%;
