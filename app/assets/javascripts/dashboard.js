@@ -10,9 +10,7 @@ $(document).on('ready page:load',function(){
         }
     });
   });
-});
 
-$(document).on('ready page:change',function(){
   //jQuery for text carousel
   $("#stat-info").Morphext({
       // The [in] animation type. Refer to Animate.css for a list of available animations.
