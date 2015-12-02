@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'collections/pickup', to: 'collections#edit'
   post 'collections/pickup', to: 'collections#update'
 
-  get 'rewards_redemption/index'
+  get 'rewards', to: 'rewards#new'
+  post 'rewards', to: 'rewards#create'
 
   devise_for :collectors, controllers: {
     registrations: 'collectors/registrations'
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
   get 'schedules', to: 'schedules#new'
 
   post 'schedules/create'
-
 
 
   get 'user/:id', to: 'users#show'

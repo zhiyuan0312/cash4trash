@@ -13,6 +13,7 @@ $(document).on('page:change', function() {
 	      'showDuration': true,
 	      'timeFormat': 'g:ia',
 	      'minTime': '8am',
+	      'maxTime': '10pm',
 	      'showDuration': false
 	  });
 
