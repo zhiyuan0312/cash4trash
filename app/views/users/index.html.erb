@@ -5,7 +5,7 @@
 			<h1><%= @user.full_name %></h1>
 		</div>
 		<div class="col-md-8">
-			<h1 class="points">You currently have: 1000 Points</h1>
+			<h1 class="points">You currently have: <span class="count"><%= current_user.points %></span>GP</h1>
 		</div>
 	</div>
 

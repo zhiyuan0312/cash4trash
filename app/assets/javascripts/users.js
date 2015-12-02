@@ -1,4 +1,17 @@
 $(document).on('ready page:load', function(){
+
+      $('.count').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 1500,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+      
   $('#renew-password-link1').click(function(){
     $('#loginModal').modal('hide');
     setTimeout(function(){
@@ -27,5 +40,6 @@ $(document).on('ready page:load', function(){
     }, 100);
 
   });
+
 });
 
