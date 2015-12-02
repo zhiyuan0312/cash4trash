@@ -21,9 +21,11 @@
 				<div class="col-md-12 stats-header">
 					<h1>So far, you have saved:</h1>
 				</div>
-
+				<div class="col-md-12">
+					<%= content_tag :div, class: "values", data: {newspaper: @total[:newspaper], cardboard: @total[:cardboard], magazine: @total[:magazine], tinmetal: @total[:tinmetal], plastic: @total[:plastic], aluminium: @total[:aluminium]} do %>
+					<% end %>
 					<div id="doughnutChart" class="chart"></div>
-
+				</div>
 			</div>
 		</div>
 
@@ -60,27 +62,5 @@
 			</a>
 		</div>
 	</div>
-
-	<div class="row">
-		<div class="col-md-6 stats">
-			<div class="stats-padding">
-				<div class="col-md-12 stats-header">
-				<h1>So far, you have saved:</h1>
-				</div>
-				<p><%= @total %></p>
-			</div>
-		</div>
-		<div class="col-md-6 stats">
-			<div class="stats-padding">
-				<div class="col-md-12">
-					<h1>That's equivalent to:</h1>
-				</div>
-				<div class="col-md-12">
-
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 </div>
