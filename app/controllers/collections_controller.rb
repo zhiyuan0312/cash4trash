@@ -3,7 +3,7 @@ class CollectionsController < ApplicationController
   def create
   	@collection = Collection.new
     @collection.schedule_id = params[:collection][:schedule_id]
-    @collection.save
+    @collection.save 
     @collection.schedule.collector_id = current_collector.id
     @collection.schedule.save
     flash[:notice] = "Booked the job!"
@@ -23,6 +23,8 @@ class CollectionsController < ApplicationController
   def update
     @schedule = Schedule.find(params[:collection][:schedule_id])
   	@collection = @schedule.collection
+    @collection.user = @schedule.user
+    @collection.collector = current_collector
     @received_points = 0
     #points multiplier
     @newspaper = 2
