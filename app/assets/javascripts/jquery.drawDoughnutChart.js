@@ -215,7 +215,7 @@
         .css({
           opacity: animationDecimal
         })
-        .text((segmentTotal * animationDecimal).toFixed(1));
+        .text((segmentTotal * animationDecimal).toFixed(0) + " KG");
     }
 
     function animateFrame(cnt, drawData) {

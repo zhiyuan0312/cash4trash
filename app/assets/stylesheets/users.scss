@@ -129,13 +129,11 @@ a:hover, a:focus{
 }
 
 .chart {
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  top: 50%;
-  left: 50%;
-  margin: -225px 0 0 -225px;
+  width: 350px;
+  height: 350px;
+  margin: 0 auto;
 }
+
 .doughnutTip {
   position: absolute;
   min-width: 30px;
@@ -169,7 +167,7 @@ a:hover, a:focus{
   position: absolute;
   top: 50%;
   left: 50%;
-  color: #d5d5d5;
+  color: #000000;
   text-align: center;
   text-shadow: 0 -1px 0 #111;
   cursor: default;
@@ -187,6 +185,6 @@ a:hover, a:focus{
   top: 50%;
   width: 100%;
   margin-top: -15%;
-  font-size: 55px;
+  font-size: 40px;
 }
 .chart path:hover { opacity: 0.65; }
