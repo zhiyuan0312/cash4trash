@@ -8,9 +8,26 @@
 	background: white;
 
 	p {
-		margin-top: 100px;
+		margin-top: 160px;
 		text-align: center;
+		font-size: 20px;
+		color: white;
 	}
+}
+
+.box_full {
+	background: url(asset-path('box_full.jpg'))center center no-repeat;
+
+}
+
+.bin_full {
+	background: url(asset-path('bin_full.jpg'))center center no-repeat;
+	max-width: 100%;
+  max-height: 100%;
+}
+
+.truck_full {
+	background: url(asset-path('truck_full.jpg'))center center no-repeat;
 }
 
 label > input {
