@@ -23,10 +23,22 @@ class CollectionsController < ApplicationController
   def update
     @schedule = Schedule.find(params[:collection][:schedule_id])
   	@collection = @schedule.collection
+    @received_points = 0
+    #points multiplier
+    @newspaper = 2
+    @magazine = 2
+    @cardboard = 2
+    @plastic = 1
+    @tinmetal = 2
+    @aluminium = 25
 
     @collection.assign_attributes(collection_params)
   	if @collection.schedule.confirmation_key == params[:collection][:confirmation_key]
   		@collection.save
+      #add points to user
+      @received_points = ((@collection.newspaper * @newspaper) + (@collection.magazine * @magazine) + (@collection.cardboard * @cardboard) + (@collection.plastic * @plastic) + (@collection.tinmetal * @tinmetal) + (@collection.aluminium * @aluminium))
+      @collection.schedule.user.points += @received_points
+      @collection.schedule.user.save
   		redirect_to '/collectors_dashboard'
   		flash[:notice] = 'Collection succesful!'
   	else
