@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202030808) do
+ActiveRecord::Schema.define(version: 20151202113752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20151202030808) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.string   "confirmation_key"
+    t.integer  "user_id"
+    t.integer  "collector_id"
   end
 
   add_index "collections", ["schedule_id"], name: "index_collections_on_schedule_id", using: :btree
@@ -50,9 +52,9 @@ ActiveRecord::Schema.define(version: 20151202030808) do
   add_index "collectors", ["email"], name: "index_collectors_on_email", unique: true, using: :btree
   add_index "collectors", ["reset_password_token"], name: "index_collectors_on_reset_password_token", unique: true, using: :btree
 
-  create_table "reward_redemptions", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "rewards", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "choice"
   end
 
   create_table "schedules", force: :cascade do |t|
