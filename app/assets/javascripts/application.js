@@ -22,4 +22,5 @@
 //= require schedule
 //= require morphext
 //= require collectors_registrations_controller
+//= require rewards
 //= require turbolinks
