@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
        user.facebook_profile_picture = auth.info.image
        user.facebook_auth_token = auth.credentials.token
        user.password = Devise.friendly_token[0,20]
+       
      end
    end
 
