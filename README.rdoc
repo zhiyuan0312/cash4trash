@@ -1,28 +1,9 @@
-== README
+Cash4Trash
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a final project for the NEXT Academy Fullstack Web Development Bootcamp for the team of Chow Zhi Yuan, Chai Wei Jun and Andy Chong.
 
-Things you may want to cover:
+This project aims to make recycling fun, easy and rewarding.
 
-* Ruby version
+Users can use this app to schedule times where recyclable trash can be picked up from their homes in exchange for points and achievements.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This project notably helped us learn about different user groups, user interface segregation for different users and jQuery implementation. 
